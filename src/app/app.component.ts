@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sse-mq-ui';
+  queue = 'Queues';
+  message = 'Messages';
+  consumer = 'Consumers';
+	active = this.queue;
 }

@@ -1,1 +1,16 @@
-<p>queue-view works!</p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Queue Key</th>
+			<th scope="col">Queue Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let queue of (queues$ | async)">
+			<th scope="row">{{queue.queueKey}}</th>
+			<td>
+				{{ queue.queueType }}
+			</td>
+		</tr>
+	</tbody>
+</table>

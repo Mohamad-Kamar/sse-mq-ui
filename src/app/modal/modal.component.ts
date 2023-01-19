@@ -8,20 +8,23 @@ import { ConfigService } from '../config.service';
 })
 export class ModalComponent {
   baseUrl: string;
-	constructor(
+  constructor(
     private modalService: NgbModal,
     private readonly configService: ConfigService
   ) {
     this.baseUrl = this.configService.getBaseUrl();
   }
 
-	open(content: any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-			(result) => {
-        this.baseUrl = result.value;
-        this.configService.setBaseUrl(this.baseUrl);
-        console.log(this.configService.getBaseUrl());
-			}
-		);
-	}
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.baseUrl = result.value;
+          this.configService.setBaseUrl(this.baseUrl);
+          console.log(this.configService.getBaseUrl());
+        },
+        (f) => f
+      );
+  }
 }

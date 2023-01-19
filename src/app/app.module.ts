@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessageViewComponent } from './message-view/message-view.component';
 import { QueueViewComponent } from './queue-view/queue-view.component';
 import { ConsumerViewComponent } from './consumer-view/consumer-view.component';
+import { ConfigService } from './config.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,9 @@ import { ConsumerViewComponent } from './consumer-view/consumer-view.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfigService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

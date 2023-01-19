@@ -35,7 +35,6 @@ const MESSAGES: Message[] = [
 @Component({
   selector: 'app-message-view',
   templateUrl: './message-view.component.html',
-  styleUrls: ['./message-view.component.css'],
   providers: [MessageViewService],
 })
 

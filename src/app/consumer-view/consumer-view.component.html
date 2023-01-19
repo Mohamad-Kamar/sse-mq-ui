@@ -1,1 +1,16 @@
-<p>consumer-view works!</p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Consumer#</th>
+			<th scope="col">Queue Key</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let consumer of (consumers$ | async)">
+			<th scope="row">{{consumer.consumerID}}</th>
+			<td>
+				{{ consumer.queueKey }}
+			</td>
+		</tr>
+	</tbody>
+</table>

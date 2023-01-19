@@ -9,6 +9,7 @@ import { MessageViewComponent } from './message-view/message-view.component';
 import { QueueViewComponent } from './queue-view/queue-view.component';
 import { ConsumerViewComponent } from './consumer-view/consumer-view.component';
 import { ConfigService } from './config.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ConfigService } from './config.service';
     MessageViewComponent,
     QueueViewComponent,
     ConsumerViewComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

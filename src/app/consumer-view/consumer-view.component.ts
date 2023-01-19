@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Consumer } from '../Types/Consumer';
+import { ConsumerViewService } from './consumer-view.service';
 
 
 const CONSUMERS: Consumer[] = [
@@ -21,7 +22,11 @@ const CONSUMERS: Consumer[] = [
 @Component({
   selector: 'app-consumer-view',
   templateUrl: './consumer-view.component.html',
+  providers: [ConsumerViewService],
 })
 export class ConsumerViewComponent {
-	consumers$: Observable<Consumer[]> = of(CONSUMERS);
+	consumers$: Observable<Consumer[]>;
+  constructor(private readonly consumerService: ConsumerViewService){
+    this.consumers$ = this.consumerService.getConsumers()
+  }
 }
